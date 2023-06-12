@@ -1,14 +1,8 @@
 @startuml
 :Empleado:
-:Empleado: -- (Alto Cliente)
-:Empleado: -- (Introducir Pedido)
-:Empleado: -- (Obtener Estado Pedido)
-:Empleado: -- (Buscar Pedido)
-:Empleado: -- (Cancelar Pedido)
-(Obtener Estado Pedido) ..> (Buscar Pedido) : incluye
-(Cancelar Pedido) ..> (Buscar Pedido) : incluye
-(Alto Cliente) ..> (Introducir Pedido) : extiende
-(Introducir Pedido) ..> (Buscar Cliente) : incluye
-(Pago Con Tarjeta) ..> (Introducir Pedido) : extiende
-(Pago en Cuenta) ..> (Introducir Pedido) : extiende
+:Administrador:
+rectangle Empresa_Pedidos {
+}
+:Empleado: -- Empresa_Pedidos
+:Administrador: -- Empresa_Pedidos
 @enduml
