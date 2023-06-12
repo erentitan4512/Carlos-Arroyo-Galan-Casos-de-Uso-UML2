@@ -1,24 +1,14 @@
 @startuml
 :Empleado:
-:Administrador:
-rectangle Empresa_Pedidos {
-  usecase "Introducir Pedido" as C1
-  usecase "Cancelar Pedido" as C2
-  usecase "Obtener Estado Pedido" as C3
-  usecase "Borrar Pedidos" as C4
-  usecase "Buscar Pedidos" as C5
-  usecase "Alta Cliente" as C6
-  usecase "Buscar Cliente" as C7
-  usecase "Nuevo Producto" as C8
-  usecase "Borrar Producto" as C9
-}
-:Empleado: -- C1
-:Empleado: -- C2
-:Empleado: -- C3
-:Empleado: -- C4
-:Empleado: -- C5
-:Empleado: -- C6
-:Empleado: -- C7
-:Administrador: -- C8
-:Administrador: -- C9
+:Empleado: -- (Alto Cliente)
+:Empleado: -- (Introducir Pedido)
+:Empleado: -- (Obtener Estado Pedido)
+:Empleado: -- (Buscar Pedido)
+:Empleado: -- (Cancelar Pedido)
+(Obtener Estado Pedido) ..> (Buscar Pedido) : incluye
+(Cancelar Pedido) ..> (Buscar Pedido) : incluye
+(Alto Cliente) ..> (Introducir Pedido) : extiende
+(Introducir Pedido) ..> (Buscar Cliente) : incluye
+(Pago Con Tarjeta) ..> (Introducir Pedido) : extiende
+(Pago en Cuenta) ..> (Introducir Pedido) : extiende
 @enduml
