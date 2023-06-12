@@ -1,14 +1,15 @@
 @startuml
-:Actor:
-:Actor2:
-rectangle Sistema {
-  usecase "Caso de Uso" as C1
-  usecase "Caso de Uso 2" as C2
-  usecase "Caso de Uso 3" as C3
+:Socio:
+:Bibliotecaria:
+rectangle Biblioteca {
+  usecase "Reservar Libro" as C1
+  usecase "Prestar Libro" as C2
+  usecase "Devolver Libro" as C3
+  usecase "Actualizar Catalogo" as C4
 }
-:Actor: -- C1
-:Actor: -- C2
-:Actor: -- C3
-:Actor2: -- C1
-:Actor2: -- C3
+:Socio: -- C1
+:Socio: -- C2
+:Socio: -- C3
+:Bibliotecaria: -- C2
+:Bibliotecaria: -- C4
 @enduml
