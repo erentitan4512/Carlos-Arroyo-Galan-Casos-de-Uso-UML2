@@ -1,5 +1,10 @@
 @startuml
-:Agente: --> (Enviar Solicitud credito)
-(Enviar Solicitud de crédito personal) --|> (Enviar Solicitud credito)
-(Enviar Solicitud de crédito empresarial) --|> (Enviar Solicitud credito)
+:Cliente Bancario:
+:Cliente Corporativo: --|> :Cliente Bancario:
+:Cliente Normal: --|> :Cliente Bancario:
+note "Actor Antecesor" as n1
+note "Actor Descendente" as n2
+n1 --> :Cliente Bancario:
+n2 --> :Cliente Normal:
+n2 --> :Cliente Corporativo:
 @enduml
